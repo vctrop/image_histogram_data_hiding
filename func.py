@@ -1,5 +1,6 @@
 import numpy as np
 import cv2
+import binascii as basci
 
 class Vector:
 	def __init__(self):
@@ -34,3 +35,13 @@ img = cv2.resize(img, (1366, 768))
 cv2.imshow('image', img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
+
+
+data = "hello"
+vect = ''.join(format(ord(x), 'b') for x in data)
+
+print(vect)
+
+data = vect.encode('ascii')
+
+print(data)
